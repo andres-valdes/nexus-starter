@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "nexus": "tsnd --no-notify --transpileOnly --project ./scripts/tsconfig.json ./scripts/codegen/nexus.ts",
+    "dev": "tsnd --no-notify --transpileOnly --respawn ./src/index.ts"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.9.16",
+    "dotenv": "^8.2.0",
+    "nexus": "^0.12.0-rc.9",
+    "nullthrows": "^1.1.1"
+  },
+  "devDependencies": {
+    "ts-node": "^8.6.2",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.5"
+  }
+}
