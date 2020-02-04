@@ -2,17 +2,24 @@
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "nexus": "tsnd --no-notify --transpileOnly --project ./scripts/tsconfig.json ./scripts/codegen/nexus.ts",
-    "dev": "tsnd --no-notify --transpileOnly --respawn ./src/index.ts"
+    "dev": "tsnd --no-notify --transpileOnly --respawn ./src/index.ts",
+    "migrate:save": "./node_modules/.bin/prisma2 migrate save --experimental",
+    "migrate:up": "./node_modules/.bin/prisma2 migrate up --experimental",
+    "prisma": "./node_modules/.bin/prisma2 generate"
   },
   "dependencies": {
+    "@prisma/client": "^2.0.0-preview020.3",
     "apollo-server-express": "^2.9.16",
     "dotenv": "^8.2.0",
     "nexus": "^0.12.0-rc.9",
     "nullthrows": "^1.1.1"
   },
   "devDependencies": {
+    "pg": "^7.18.1",
+    "prisma2": "^2.0.0-preview020.3",
     "ts-node": "^8.6.2",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.5"
-  }
+  },
+  "license": "MIT"
 }
