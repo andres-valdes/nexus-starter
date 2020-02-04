@@ -1,4 +1,4 @@
-import * as queryTypes from './queries';
+import * as queryTypes from '../queries';
 
 const types = [queryTypes];
 
