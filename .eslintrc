@@ -2,7 +2,8 @@
   "root": true,
   "rules": {
     "no-console": "warn",
-    "import/export": "off"
+    "import/export": "off",
+    "implicit-arrow-linebreak": "off"
   },
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "prettier"],

@@ -5,7 +5,7 @@ import { makeSchema } from 'nexus';
 import express from 'express';
 import nullthrows from 'nullthrows';
 
-import { types } from './graphql/schema';
+import types from './graphql/schema';
 
 const { PORT } = process.env;
 
