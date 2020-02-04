@@ -1,4 +1,4 @@
-import * as queryTypes from '../queries';
+import * as queryTypes from '../graphql/queries';
 
 const types = [queryTypes];
 

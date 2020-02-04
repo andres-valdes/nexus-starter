@@ -1,7 +1,7 @@
 import { makeSchema } from 'nexus';
 import * as path from 'path';
 
-import types from '../../src/graphql/apollo/schema';
+import types from '../../src/apollo/schema';
 
 console.log('Generating GraphQL artifacts...');
 
