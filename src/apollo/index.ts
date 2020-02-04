@@ -1,4 +1,4 @@
-import '../../env';
+import '../env';
 
 import { ApolloServer } from 'apollo-server-express';
 import { makeSchema } from 'nexus';

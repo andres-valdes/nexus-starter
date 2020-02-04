@@ -1,1 +1,1 @@
-import './graphql/apollo';
+import './apollo';
