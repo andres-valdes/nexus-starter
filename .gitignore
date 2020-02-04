@@ -2,3 +2,4 @@ node_modules
 yarn-error.log
 .env
 failed-introspect*
+.DS_Store
