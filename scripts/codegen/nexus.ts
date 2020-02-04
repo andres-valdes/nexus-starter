@@ -11,12 +11,12 @@ makeSchema({
   outputs: {
     schema: path.join(
       __dirname,
-      '../../src/graphql/__generated__/schema.graphql'
+      '../../src/graphql/__generated__/schema.graphql',
     ),
     typegen: path.join(
       __dirname,
-      '../../src/graphql/__generated__/schema.graphql.d.ts'
-    )
+      '../../src/graphql/__generated__/schema.graphql.d.ts',
+    ),
   },
   typegenAutoConfig: {
     sources: [],
@@ -26,7 +26,7 @@ makeSchema({
       EmailAddress: 'string',
       DateTime: 'Date',
       PostalCode: 'string',
-      SensitiveString: 'string'
-    }
-  }
+      SensitiveString: 'string',
+    },
+  },
 });

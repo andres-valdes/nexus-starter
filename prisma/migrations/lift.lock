@@ -3,5 +3,4 @@
 # lift lockfile v1
 # Read more about conflict resolution here: TODO
 
-20200130010155-create-base-models
-20200130010536-add-students-to-guardians
+20200203204232-create-schema

@@ -1,10 +1,8 @@
 import { queryField } from 'nexus';
 
-const HelloWorld = queryField('hello_world', {
+export default queryField('helloWorld', {
   type: 'String',
   resolve() {
     return 'Hi';
-  }
+  },
 });
-
-export { HelloWorld };
