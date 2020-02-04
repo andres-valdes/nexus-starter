@@ -1,18 +1,52 @@
 {
   "scripts": {
-    "start": "ts-node ./src/index.ts",
-    "nexus": "tsnd --no-notify --transpileOnly --project ./scripts/tsconfig.json ./scripts/codegen/nexus.ts",
-    "dev": "tsnd --no-notify --transpileOnly --respawn ./src/index.ts"
+    "chk": "yarn fmt:check && yarn lint",
+    "dev": "tsnd --no-notify --transpileOnly --respawn ./src/index.ts",
+    "fix": "yarn fmt && yarn lint:fix",
+    "fmt": "./node_modules/.bin/prettier --write 'src/**/*.ts'",
+    "fmt:check": "./node_modules/.bin/prettier --check 'src/**/*.ts'",
+    "gen": "yarn gen:prisma && yarn gen:nexus",
+    "gen:nexus": "tsnd --no-notify --transpileOnly --project ./scripts/tsconfig.json ./scripts/codegen/nexus.ts",
+    "gen:prisma": "./node_modules/.bin/prisma2 generate",
+    "lint": "./node_modules/.bin/eslint --config .eslintrc 'src/**/*.*'",
+    "lint:fix": "./node_modules/.bin/eslint --fix --config .eslintrc 'src/**/*.*'",
+    "migrate:save": "./node_modules/.bin/prisma2 migrate save --experimental",
+    "migrate:up": "./node_modules/.bin/prisma2 migrate up --experimental",
+    "migrate:down": "./node_modules/.bin/prisma2 migrate down --experimental",
+    "postinstall": "yarn gen",
+    "start": "ts-node ./src/index.ts"
   },
   "dependencies": {
+    "@prisma/client": "^2.0.0-preview020.3",
     "apollo-server-express": "^2.9.16",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "nexus": "^0.12.0-rc.9",
+    "nexus-prisma": "^0.9.1",
     "nullthrows": "^1.1.1"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^6.3.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.1",
+    "pg": "^7.18.1",
+    "prettier": "^1.19.1",
+    "prisma2": "^2.0.0-preview020.3",
     "ts-node": "^8.6.2",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.5"
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn gen && yarn chk"
+    }
+  },
+  "license": "MIT"
 }
